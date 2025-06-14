@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   sig { returns(T.nilable(Post)) }
   def new
     @post = Post.new
+    @post.set_title("new post")
+    @post
   end
 
   # GET /posts/1/edit

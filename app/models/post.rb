@@ -5,6 +5,11 @@ class Post < ApplicationRecord
 
   sig { returns(String) }
   def title_and_body
-    T.must(self.title) + T.must(self.body)
+    T.must(title) + T.must(body)
+  end
+
+  sig { params(new_title: String).returns(String) }
+  def set_title(new_title)
+    self.title = new_title
   end
 end
